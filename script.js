@@ -20,25 +20,27 @@ function getHexInput() {
   // document.querySelector("#colorPicker").addEventListener("input", showBoxColor);
   // let valueHex = event.target.value;
   let valueHex = document.getElementById("colorPicker").value;
-  showBoxColor(valueHex);
-  showHex(valueHex);
-  hexToRgb(valueHex);
-
-}
-
-
-function showBoxColor(valueHex) {
-  console.log("showBoxColor");
-  document.getElementById("boxColor").style.backgroundColor = valueHex;
   
+  showHex(valueHex);
+  showBoxColor(valueHex);
+  // hexToRgb(valueHex);
+
 }
+
+
 
 // function getHexValue() {}
 
 function showHex(valueHex) {
   console.log("showHex",valueHex);
-  document.getElementById("hex").textContent = `${valueHex}`;
+  document.getElementById("hex").innerHTML = `${valueHex}`;
   
+}
+
+function showBoxColor(valueHex) {
+  console.log("showBoxColor");
+  document.getElementById("boxColor").style.backgroundColor = valueHex;
+  hexToRgb(valueHex); 
 }
 
 function hexToRgb(valueHex) {
@@ -62,7 +64,7 @@ function hexToRgb(valueHex) {
   
 function showRgb(r, g, b) {
   console.log("showRgb");
-  document.getElementById("rgb").textContent = `${r}, ${g}, ${b}`;
+  document.getElementById("rgb").innerHTML = `${r}, ${g}, ${b}`;
   getHslValue(r, g, b);
 }
 
@@ -110,8 +112,9 @@ function getHslValue(r, g, b) {
 
 function showHsl(h, s, l) {
   console.log("showHsl");
-  document.getElementById("hsl").textContent = `${h}, ${s}%, ${l}%`;
-  // HSL.textContent = `HSL: ${h}, ${s}%, ${l}%`;
+  document.getElementById("hsl").innerHTML = `${h.toFixed()}, ${s.toFixed()}%, ${l.toFixed()}%`;
+
+  // HSL.textContent = `HSL: ${h.tofixed(0)}, ${s.tofixed(0)}%, ${l}%`;
   
 }
 

@@ -1,4 +1,9 @@
+#colorContainer {
+  height: 30vw;
+  width: auto;
+}
+
 #boxColor {
-  height: 20fr;
-  width: 20fr;
+  height: 10vw;
+  width: 10vw;
 }
